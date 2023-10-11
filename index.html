@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		  content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet"
+		  href="css/main.css">
+	<title>shopping list</title>
+	<style>
+		body {
+			background-color: lightsteelblue;
+			font-family: sans-serif;
+			padding: 0 1rem;
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+		}
+
+		h1 {
+			color: navy;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Shopping List</h1>
+	<ul class="shoppingList">
+		<li>Butter</li>
+		<li>Bread</li>
+		<li>Milk</li>
+		<li>Yogurt</li>
+		<li>Bananas</li>
+		<li>Apples</li>
+	</ul>
+
+	<form>
+		<input class="shoppingItemInput" type="text" > <button class="btnAdd">Add</button>
+	</form>
+
+	<script>
+		const btnAddElem = document.querySelector('.btnAdd');
+		const shoppingItemElem = document.querySelector('.shoppingItemInput');
+		const shoppingListElem = document.querySelector('.shoppingList');
+
+		btnAddElem.addEventListener('click', (e) => {
+			e.preventDefault();
+			const shoppingItem = shoppingItemElem.value;
+			const liElem = document.createElement('li');
+			liElem.innerText = shoppingItem;
+			shoppingListElem.appendChild(liElem);
+			shoppingItemElem.value = '';
+		});
+	</script>
+</body>
+
+</html>
